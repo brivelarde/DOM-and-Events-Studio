@@ -55,8 +55,9 @@ window.addEventListener('load', function(event) {
         if (document.getElementById("flightStatus").innerHTML != "Shuttle in flight") {
             window.alert("Shuttle is grounded. Take off to start flying!")
         } else {
-            document.getElementById("spaceShuttleHeight").innerHTML = (parseInt(document.getElementById("spaceShuttleHeight").innerHTML) + 10000);
-        
+            if (document.getElementById("spaceShuttleHeight").innerHTML < 260000) {
+                document.getElementById("spaceShuttleHeight").innerHTML = (parseInt(document.getElementById("spaceShuttleHeight").innerHTML) + 10000);
+            } 
             rocket.style.top = movement("top", -10)
         }
     });
@@ -66,7 +67,9 @@ window.addEventListener('load', function(event) {
         if (document.getElementById("flightStatus").innerHTML != "Shuttle in flight") {
             window.alert("Shuttle is grounded. Take off to start flying!")
         } else {
-            document.getElementById("spaceShuttleHeight").innerHTML = (parseInt(document.getElementById("spaceShuttleHeight").innerHTML) - 10000);
+            if (document.getElementById("spaceShuttleHeight").innerHTML > 0) {
+                document.getElementById("spaceShuttleHeight").innerHTML = (parseInt(document.getElementById("spaceShuttleHeight").innerHTML) - 10000);
+            } 
         
             rocket.style.top = movement("top", 10)
         }
