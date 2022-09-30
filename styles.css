@@ -28,3 +28,9 @@
 .centered {
     text-align: center;
 }
+
+#rocket {
+    position: absolute;
+    top: 250px;
+    left: 352px;
+}
